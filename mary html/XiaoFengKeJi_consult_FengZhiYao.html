@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>XiaoFengKeJi - 咨询 - 冯治尧</title>
+        <script>
+            var ProhibitedOperation = 0;
+            var ProhibitedType = 'None';
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+        
+            document.onkeydown = function(e) {
+                // 禁用F12、Ctrl+Shift+I、Ctrl+U、Ctrl+S、PrintScreen、Ctrl+P键
+                if (
+                    e.key === 'F12' ||
+                    (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+                    (e.ctrlKey && e.key === 'u') ||
+                    (e.ctrlKey && e.key === 's') ||
+                    (e.ctrlKey && e.key === 'p') ||
+                    e.key === 'PrintScreen'
+                ) {
+                    e.preventDefault();
+                    alert('此操作已被禁止！');
+                    console.log('ERROR: PROHIBITED OPERATION');
+                    ProhibitedOperation = ProhibitedOperation + 1
+                    ProhibitedType = 'NoChoose'
+                    if(ProhibitedOperation == 9) {
+                        console.log('WARNING:AM');
+                    }
+                }   
+            };
+        </script>
+        <style>
+            @font-face {
+                font-family: 'MojanglesRegular';
+                src: url('Mojangles-Regular.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            body, h1, a {
+                font-family: 'MojanglesRegular', Arial, sans-serif; /* 应用自定义字体，若不支持则回退到Arial */
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;">
+            XiaoFengKeJi - 咨询 - 冯治尧
+        </h1>
+        <p>2元一次</p>
+        <img src="XiaoFengKeJi_ZhangHongMei_ShouKuan.png.jpg"/>
+    </body>
+</html>
